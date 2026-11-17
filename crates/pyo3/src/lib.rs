@@ -216,6 +216,14 @@ fn _libnautilus(py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
         sys_modules.set_item(format!("{module_name}.{n}"), m.getattr(n)?)?;
     }
 
+    #[cfg(feature = "adapters")]
+    {
+        let n = "market_feed";
+        let submodule = pyo3::wrap_pymodule!(nautilus_market_feed::python::market_feed);
+        m.add_wrapped(submodule)?;
+        sys_modules.set_item(format!("{module_name}.{n}"), m.getattr(n)?)?;
+    }
+
     #[cfg(feature = "betfair")]
     {
         let n = "betfair";

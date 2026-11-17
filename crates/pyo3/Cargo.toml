@@ -25,6 +25,7 @@ default = ["adapters"]
 adapters = [
   "dep:nautilus-architect-ax",
   "dep:nautilus-binance",
+  "dep:nautilus-market-feed",
   "dep:nautilus-bybit",
   "dep:nautilus-coinbase",
   "dep:nautilus-databento",
@@ -62,6 +63,7 @@ extension-module = [
   "nautilus-backtest/extension-module",
   "nautilus-betfair?/extension-module",
   "nautilus-binance?/extension-module",
+  "nautilus-market-feed?/extension-module",
   "nautilus-coinapi?/extension-module",
   "nautilus-coinbase?/extension-module",
   "nautilus-blockchain?/extension-module",
@@ -101,6 +103,7 @@ high-precision = [
   "nautilus-testkit/high-precision",
   "nautilus-betfair?/high-precision",
   "nautilus-binance?/high-precision",
+  "nautilus-market-feed?/high-precision",
   "nautilus-coinbase?/high-precision",
   "nautilus-bybit?/high-precision",
   "nautilus-databento?/high-precision",
@@ -161,6 +164,7 @@ nautilus-architect-ax = { workspace = true, optional = true, features = [
 ] }
 nautilus-betfair = { workspace = true, optional = true }
 nautilus-binance = { workspace = true, optional = true, features = ["python"] }
+nautilus-market-feed = { workspace = true, optional = true, features = ["python"] }
 nautilus-blockchain = { workspace = true, features = [
   "python",
 ], optional = true }
